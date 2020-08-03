@@ -14,7 +14,7 @@ class App extends Component {
                 <div classname="jumbotron">
                     <h1 className="display-3">
                         app name
-                        <button className="btn btn-primary" onClick={this.revert}>revert</button>
+                        <button className="btn btn-primary float-right" onClick={this.revert}>revert</button>
                     </h1>
                 </div>
                 <ArticleList articles={this.state.reverted ? articles.reverse() : articles}/>
