@@ -4,10 +4,12 @@ import articles from '../fixtures'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
-    state={
+    state = {
         reverted: false
     }
+    articles = articles.slice()
     render() {
+        console.log('---', 2, this.state)
         return (
 
             <div className="container">
@@ -17,14 +19,17 @@ class App extends Component {
                         <button className="btn btn-primary float-right" onClick={this.revert}>revert</button>
                     </h1>
                 </div>
-                <ArticleList articles={this.state.reverted ? articles.reverse() : articles}/>
+                <ArticleList articles={this.articles}/>
             </div>
         )
     }
 
-    revert=()=> this.setState({
-        reverted: !this.state.reverted
-    })
+    revert = () => {
+        this.articles.reverse()
+        this.setState({
+            reverted: !this.state.reverted
+        })
+    }
 }
 
 export default App

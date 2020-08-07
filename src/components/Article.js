@@ -1,9 +1,10 @@
-import React, {Component} from 'react'
+import React, {Component, pureComponent} from 'react'
 
 class Article extends Component {
     state = {
         isOpen: true
     }
+
 
     render() {
         const {article} = this.props
